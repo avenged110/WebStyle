@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>WebStyle</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="pane">
+      <header class="pane-header">
+        <h1>WebStyle</h1>
+        <span class="pane-count" id="count"></span>
+      </header>
+
+      <div class="actions">
+        <button type="button" class="action" id="btn-add" disabled>
+          <span class="favicon-wrap">
+            <img id="favicon" alt="" width="18" height="18" hidden />
+            <svg id="add-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+          </span>
+          <span class="action-text">
+            <span class="action-label" id="btn-add-label">Add this site</span>
+            <span class="action-sub" id="btn-add-sub">&nbsp;</span>
+          </span>
+        </button>
+        <button type="button" class="action square" id="btn-export" title="Export settings to your downloads folder" disabled>
+          <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 14v4.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V14" /></svg>
+          <svg class="done-glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" /><path d="M6.7 12.5l3.9 3.8 6.9-7.9" /></svg>
+          <span>Export</span>
+        </button>
+        <button type="button" class="action square" id="btn-import" title="Import settings from a file (merges with this list)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 14v4.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V14" /></svg>
+          <span>Import</span>
+        </button>
+      </div>
+
+      <div class="refresh-bar" id="refresh-bar" hidden>
+        <span>Refresh this page to see the change.</span>
+        <button type="button" class="btn small" id="btn-refresh">Refresh</button>
+      </div>
+
+      <div class="list-wrap" id="list-wrap">
+        <ul id="list" class="list" aria-label="Styled sites"></ul>
+        <div id="empty" class="empty" hidden>
+          <p class="empty-title">No sites yet</p>
+          <p class="empty-sub">Open a site and choose “Add this site”, or import a backup.</p>
+        </div>
+        <div class="hint" id="hint" aria-live="polite"></div>
+      </div>
+    </main>
+    <script src="../shared/features.js"></script>
+    <script src="../shared/sites.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

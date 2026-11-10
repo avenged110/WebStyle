@@ -1,0 +1,8 @@
+/* WebStyle — "Helvetica" feature. The :not() guard lets WebStyle switch this off on an open page without a
+   reload. Icon fonts (Material Icons/Symbols, Google Symbols, Font Awesome, Glyphicons) are left alone so
+   their glyphs don't turn into words like "search" or blank boxes. */
+:root:not([data-webstyle-off~="helvetica"]),
+:root:not([data-webstyle-off~="helvetica"])
+  *:not([class*="material-icons"], [class*="material-symbols"], [class*="google-symbols"], .fa, .fas, .far, .fab, .fal, .fad, .fa-solid, .fa-regular, .fa-brands, .glyphicon) {
+  font-family: Helvetica, sans-serif !important;
+}

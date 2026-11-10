@@ -1,0 +1,5 @@
+/* WebStyle — "Bold" feature. The :not() guard lets WebStyle switch this off on an open page without a reload. */
+:root:not([data-webstyle-off~="bold"]),
+:root:not([data-webstyle-off~="bold"]) * {
+  font-weight: bold !important;
+}

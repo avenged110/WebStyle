@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>WebStyle test</title>
+<style>body{font-family:Georgia,serif;font-weight:300} .material-icons{font-family:"Material Icons"} </style></head>
+<body><h1 id="h">Heading</h1><p id="p">Paragraph text</p><span class="material-icons" id="icon">search</span>
+<iframe id="same" srcdoc="<p id=p>srcdoc frame</p>"></iframe>
+<iframe id="xo" src="about:blank"></iframe>
+<script>
+  // Cross-origin child frame on other.test (same port).
+  document.getElementById("xo").src = location.protocol + "//other.test:" + location.port + "/frame.html";
+</script>
+</body></html>
